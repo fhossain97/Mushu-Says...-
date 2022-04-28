@@ -1,3 +1,0 @@
-# Mushu-Says...
-
-Grab the intro from the proposal and doctor it up
