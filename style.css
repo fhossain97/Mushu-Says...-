@@ -2,6 +2,14 @@ h1 {
     text-align: center;
 }
 
+body {
+    background-image: url('background.jpg');
+}
+
+.scoreboard {
+    text-align: right;
+}
+
 .game-board {
     display: grid;
     grid-template-rows: repeat(3, 120px);
