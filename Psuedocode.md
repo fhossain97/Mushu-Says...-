@@ -27,7 +27,7 @@ How do I create it?
 
 How do I plan out my schedule?
 
-4/27 - Psuedocode and planning
+//4/27 - Psuedocode and planning
 4/28 - Loosely code the HTML and the CSS: build the board and scoreboard. Color code each square with keyframes/glow feature (3,5 and some of 6 and 7)
 4/29 - Cry. Start building the game levels and the modal (1,2,4)
 4/30 - Continue to build the game levels and get the images for the animations (Mushu and Meeshu pics) (1,2,4) *** Bulk of the javascript needs to be done
