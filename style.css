@@ -14,7 +14,7 @@ body {
     padding: 10px;
 }
 
-#name {
+#start {
     text-align: center;
     width: 20vw;
     height: 5vh;
@@ -22,6 +22,10 @@ body {
     background-color: azure;
     font-style: bold;
     
+}
+
+.player {
+    text-align: left
 }
 
 .scoreboard {
@@ -108,7 +112,6 @@ body {
     float: center;
     font-size: 20px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-
 }
 
 .close:hover,
