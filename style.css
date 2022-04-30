@@ -5,12 +5,23 @@ h1 {
 
 body {
     background-image: url('background.jpg');
+    text-align: center;
 }
 
 .buttons {
     text-align: center;
     margin: auto;
     padding: 10px;
+}
+
+#name {
+    text-align: center;
+    width: 20vw;
+    height: 5vh;
+    font-size: 20px;
+    background-color: azure;
+    font-style: bold;
+    
 }
 
 .scoreboard {
@@ -76,19 +87,20 @@ body {
 
 .modal {
     display: none;
+    background-color: yellow;
+    align-items: center;
+    margin: auto;
     position: fixed;
-    justify-content: center;
-    width: 50%;
-    height: 50%;
-    background-color: lemonchiffon;
 }
 
 .modalText-content {
-    background-color: yellow;
-    margin: auto;
-    border: 2px solid orangered;
-    width: 75vw;
-    height: 75 vh;
+    background-color: lemonchiffon;
+    margin: 5px;
+    border: 3px solid orangered;
+    width: 50vw;
+    height: 20vh;
+    padding: 15px;
+    justify-content: center;
 }
 
 .close {
@@ -101,7 +113,6 @@ body {
 
 .close:hover,
 .close:focus {
-    color:bisque;
+    color: blueviolet;
     cursor: auto;
-    text-decoration: none;
 }
