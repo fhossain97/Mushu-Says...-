@@ -4,7 +4,8 @@ h1 {
 }
 
 body {
-    background-image: url('background.jpg');
+    /* background-image: url('background.jpg'); */
+    background-color: black;
     text-align: center;
 }
 
@@ -40,13 +41,18 @@ body {
 }
 
 .square {
-    border: 1px solid black
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.square:hover {
+    box-shadow: inset 0px 0px 5px 5px aqua;
+
 }
 
 #indigo {
     background-color: indigo;
-    animation-duration: 1s;
-    animation-name: game-board;
+
 }
 
 #red {
@@ -85,37 +91,3 @@ body {
     background-color: green;
 }
 
-@keyframes game-board {
-    25%  {background-color: whitesmoke;}
-}
-
-.modal {
-    display: none;
-    background-color: yellow;
-    align-items: center;
-    margin: auto;
-    position: fixed;
-}
-
-.modalText-content {
-    background-color: lemonchiffon;
-    margin: 5px;
-    border: 3px solid orangered;
-    width: 50vw;
-    height: 20vh;
-    padding: 15px;
-    justify-content: center;
-}
-
-.close {
-    color: lightcoral;
-    float: center;
-    font-size: 20px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
-
-.close:hover,
-.close:focus {
-    color: blueviolet;
-    cursor: auto;
-}

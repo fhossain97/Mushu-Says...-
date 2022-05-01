@@ -1,12 +1,6 @@
-//Start the game
-let startButton = document.querySelector('#name')
+//Each square flashes in a random pattern
 
-startButton.addEventListener('click',gameNewRound())
-
-//Playing each round
-let playerTurn;
-let computerTurn; 
-
+//Grab squares from HTML
 let indigo = document.querySelector('#indigo')
 let orange = document.querySelector('#orange')
 let greenyellow = document.querySelector('#greenyellow')
@@ -15,34 +9,40 @@ let yellow = document.querySelector('#yellow')
 let blue = document.querySelector('#blue')
 let pink = document.querySelector('#pink')
 let green = document.querySelector('#green')     
-let violet = document.querySelector('#violet')   
+let violet = document.querySelector('#violet')  
 
-let squares = [
-    indigo,
-    orange,
-    greenyellow,
-    red,
-    yellow,
-    blue,
-    pink,
-    green,
-    violet 
-]
+//Put squares in an array
+// let randomGlowingSquares = () => {
+//     const squares = [indigo, orange, greenyellow,red,yellow, blue, pink, green,violet];
+//     let random = Math.floor(Math.random() * squares.length)
+//     return random  
+// }
 
- gameNewRound = () => {
-    startButton.style.display = 'none'
-    let squares = document.querySelector('.square')
-    let pattern = Math.floor((Math.random(squares)*9))
-    computerTurn = pattern
-    rounds()
- }
+const squares = [indigo, orange, greenyellow,red,yellow, blue, pink, green,violet];
+const randomizedSquares = squares.map((randomGlowingSquares) => {
+    let random = Math.floor(Math.random() * squares.length)
+    return random 
+})
 
- rounds = () =>  {
-    let score = document.querySelector('.scoreboard')
-    let player= document.querySelector('.player')
-    let roundNumber = 0
-    roundNumber++
 
-    //need some sort of function with add event lsitener that if right squares are clicked, then you get a point added on
+let square = document.querySelectorAll('.square')
 
- }
+//Function for each square to glow 
+let flashingSquares = (square) => {
+    return new Promise((resolve, reject) => {
+        square.style.backgroundColor = 'white'
+        setTimeout(() => {
+            square.style.backgroundColor = ('');
+        resolve()
+        }, 500)
+    })
+}
+
+//Loop of squares sequence
+let squaresLoop = async () => {
+    for (const square in randomizedSquares) {
+    await flashingSquares(square)
+    }
+}
+squaresLoop()
+

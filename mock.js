@@ -37,37 +37,7 @@ gameStartButton.style.display = 'none';
 
 gameStartButton.addEventListener('click', startGame)
 
-gameturn = () => {
-    switch(pattern) {
-    case 1:
-        gameMemory.push('indigo')
-        break;
-    case 2:
-        gameMemory.push('orange')
-        break;
-    case 3:
-        gameMemory.push('greenyellow')
-        break;
-    case 4:
-        gameMemory.push('red')
-        break;
-    case 5:
-        gameMemory.push('yellow')
-        break;
-    case 6:
-        gameMemory.push('blue')
-        break;
-    case 7:
-        gameMemory.push('pink')
-        break;
-    case 8:
-        gameMemory.push('green')
-        break;
-    case 9:
-        gameMemory.push('violet')
-        break;
-    }
-}
+
 
 for (let i = 0; i < gameMemory.length; i++) {
     
@@ -125,3 +95,92 @@ squarePattern = () => {
   document.querySelectorAll('button').onclick = function player() {
    console.log(gameChoice. target);
   }
+
+  //  gameNewRound = () => {
+//     startButton.style.display = 'none'
+//     let squares = document.querySelector('.square')
+//     let pattern = Math.floor((Math.random(squares)*9))
+//     computerTurn = pattern
+//     rounds()
+//  }
+
+//  rounds = () =>  {
+//     let score = document.querySelector('.scoreboard')
+//     let player= document.querySelector('.player')
+//     let roundNumber = 0
+//     roundNumber++
+//  }
+
+
+//Start the game
+let startButton = document.querySelector('#name')
+startButton.addEventListener('click',gameNewRound())
+
+//Playing the game
+// let playerTurn;
+// let computerTurn; 
+ 
+
+//    gameNewRound = () => {
+//     startButton.style.display = 'none'
+//     let squares = document.querySelector('.square')
+//     let pattern = Math.floor((Math.random(squares)*9))
+//     computerTurn = pattern
+//     rounds()
+//  }
+
+//  rounds = () =>  {
+//     let score = document.querySelector('.scoreboard')
+//     let player= document.querySelector('.player')
+//     let roundNumber = 0
+//     roundNumber++
+//  }
+
+ 
+
+// @keyframes game-board {
+//     25%  {background-color: whitesmoke;}
+// }
+
+// .modal {
+//     display: none;
+//     background-color: yellow;
+//     align-items: center;
+//     margin: auto;
+//     position: fixed;
+// }
+
+// .modalText-content {
+//     background-color: lemonchiffon;
+//     margin: 5px;
+//     border: 3px solid orangered;
+//     width: 50vw;
+//     height: 20vh;
+//     padding: 15px;
+//     justify-content: center;
+// }
+
+// .close {
+//     color: lightcoral;
+//     float: center;
+//     font-size: 20px;
+//     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+// }
+
+// .close:hover,
+// .close:focus {
+//     color: blueviolet;
+//     cursor: auto;
+// }
+
+
+  
+
+//  let canClick = false   
+// let squareClicked = () => {
+//     if(!canClick) return
+
+// }
+
+
+
