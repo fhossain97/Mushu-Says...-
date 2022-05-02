@@ -23,120 +23,6 @@
 // })
 
 
-//Game 
-
-//Game variables
-
-           
-
-let gameStartButton = document.querySelector('name#')
-
-startGame = () => {
-gameStartButton.style.display = 'none';
-}
-
-gameStartButton.addEventListener('click', startGame)
-
-
-
-for (let i = 0; i < gameMemory.length; i++) {
-    
-}
-
-game = () => {
-    this.playerTurn = false;
-    this.gameMemory;
-    this.roundNumber;
-}
-
-newGame = () => {
-    game = newGame()
-    setTimeout(fadeIntro, 250)
-    setTimeout(roundNumber++, 2500)
-}
-
-//Start the game
-let reset = document.querySelector('#reset')
-let restart = document.querySelector('#restart')
-
-
-let computerTurn = [];
-let playerTurn = [];
-let gameMemory = []
-let roundNumber = 0
-
-gameStart = () => {
-    this.playerTurn = false
-    this.computerTurn = true
-    gameMemory
-    roundNumber
-}
-
-newGame = () => {
-    game = newGame()
-    score++
-    score.innerHTML = ''
-    setTimeout(fadeIntro, 250)
-}
-
-squarePattern = () => {
-    let pattern = Math.floor((Math.random()*9))
-}
-
-
-  
-  function displayWinner(winner){ 
-    const winnerText = document.createElement('body');
-    winnerText.innerText = winner;
-    document.body.appendChild(winnerText);
-  }
-  compareChoices();   
-  
-  document.querySelectorAll('button').onclick = function player() {
-   console.log(gameChoice. target);
-  }
-
-  //  gameNewRound = () => {
-//     startButton.style.display = 'none'
-//     let squares = document.querySelector('.square')
-//     let pattern = Math.floor((Math.random(squares)*9))
-//     computerTurn = pattern
-//     rounds()
-//  }
-
-//  rounds = () =>  {
-//     let score = document.querySelector('.scoreboard')
-//     let player= document.querySelector('.player')
-//     let roundNumber = 0
-//     roundNumber++
-//  }
-
-
-//Start the game
-let startButton = document.querySelector('#name')
-startButton.addEventListener('click',gameNewRound())
-
-//Playing the game
-// let playerTurn;
-// let computerTurn; 
- 
-
-//    gameNewRound = () => {
-//     startButton.style.display = 'none'
-//     let squares = document.querySelector('.square')
-//     let pattern = Math.floor((Math.random(squares)*9))
-//     computerTurn = pattern
-//     rounds()
-//  }
-
-//  rounds = () =>  {
-//     let score = document.querySelector('.scoreboard')
-//     let player= document.querySelector('.player')
-//     let roundNumber = 0
-//     roundNumber++
-//  }
-
- 
 
 // @keyframes game-board {
 //     25%  {background-color: whitesmoke;}
@@ -174,13 +60,6 @@ startButton.addEventListener('click',gameNewRound())
 // }
 
 
-  
-
-//  let canClick = false   
-// let squareClicked = () => {
-//     if(!canClick) return
-
-// }
 
 
 

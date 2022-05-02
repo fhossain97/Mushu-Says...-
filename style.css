@@ -4,7 +4,7 @@ h1 {
 }
 
 body {
-    /* background-image: url('background.jpg'); */
+    background-image: url('background.jpg');
     background-color: black;
     text-align: center;
 }
@@ -25,10 +25,6 @@ body {
     
 }
 
-.player {
-    text-align: left
-}
-
 .scoreboard {
     text-align: right;
 }
@@ -47,47 +43,46 @@ body {
 
 .square:hover {
     box-shadow: inset 0px 0px 5px 5px aqua;
-
 }
 
-#indigo {
+.color-change {
+    background-color: white
+}
+
+.color-indigo {
     background-color: indigo;
 
 }
 
-#red {
-    background-color: red;
-}
-
-#pink {
-    background-color: pink;
-}
-
-#greenyellow {
-    background-color: greenyellow;
-}
-
-#yellow {
-    background-color: yellow;
-}
-
-#blue {
-    background-color: blue;
-}
-
-#violet {
-    background-color: violet;
-}
-
-#orange {
+.color-orange {
     background-color: orange;
 }
 
-#hot-pink {
+.color-greenyellow {
+    background-color: greenyellow;
+}
+
+.color-red {
+    background-color: red;
+}
+
+.color-yellow {
+    background-color: yellow;
+}
+
+.color-blue {
+    background-color: blue;
+}
+
+.color-violet {
+    background-color: violet;
+}
+
+.color-pink {
     background-color: hotpink;
 }
 
-#green {
+.color-green {
     background-color: green;
 }
 

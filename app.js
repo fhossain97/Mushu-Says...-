@@ -1,48 +1,74 @@
-//Each square flashes in a random pattern
-
-//Grab squares from HTML
-let indigo = document.querySelector('#indigo')
-let orange = document.querySelector('#orange')
-let greenyellow = document.querySelector('#greenyellow')
-let red = document.querySelector('#red')
-let yellow = document.querySelector('#yellow')
-let blue = document.querySelector('#blue')
-let pink = document.querySelector('#pink')
-let green = document.querySelector('#green')     
-let violet = document.querySelector('#violet')  
-
-//Put squares in an array
-// let randomGlowingSquares = () => {
-//     const squares = [indigo, orange, greenyellow,red,yellow, blue, pink, green,violet];
-//     let random = Math.floor(Math.random() * squares.length)
-//     return random  
-// }
-
-const squares = [indigo, orange, greenyellow,red,yellow, blue, pink, green,violet];
-const randomizedSquares = squares.map((randomGlowingSquares) => {
-    let random = Math.floor(Math.random() * squares.length)
-    return random 
-})
+let indigo = document.querySelector('.color-indigo')
+let orange = document.querySelector('.color-orange')
+let greenyellow = document.querySelector('.color-reenyellow')
+let red = document.querySelector('.color-red')
+let yellow = document.querySelector('.color-yellow')
+let blue = document.querySelector('.color-blue')
+let pink = document.querySelector('.color-pink')
+let green = document.querySelector('.color-green')     
+let violet = document.querySelector('.color-violet') 
 
 
-let square = document.querySelectorAll('.square')
+//Enter your name
+let playerName = () => {
+    let player = document.querySelector('#enteredname')
+    let nameEntered = []
 
-//Function for each square to glow 
-let flashingSquares = (square) => {
-    return new Promise((resolve, reject) => {
-        square.style.backgroundColor = 'white'
-        setTimeout(() => {
-            square.style.backgroundColor = ('');
-        resolve()
-        }, 500)
-    })
-}
-
-//Loop of squares sequence
-let squaresLoop = async () => {
-    for (const square in randomizedSquares) {
-    await flashingSquares(square)
+    if (player.value !== '') {
+        nameEntered.push(player.value)
+        return(nameEntered)
     }
 }
-squaresLoop()
+
+//Start
+let start = () => {
+    let gameStartButton = document.querySelector('#start')
+startGame = () => {
+gameStartButton.style.display = 'none';
+gameRounds()
+}
+gameStartButton.addEventListener('click', startGame)
+}
+start();
+
+//Rounds
+let round = 0;
+let gameRounds = () => {
+    round =+ 1
+    nextPattern()
+}
+
+//Next Pattern
+let nextPattern = () => {
+    const squareSequence = []
+    squareSequence.push(randomSquares())
+}
+
+//Random Square Pattern
+let randomSquares = () => {
+    const squares = [indigo, orange, greenyellow, red, yellow, blue, pink, green, violet];
+    const random = squares[Math.floor(Math.random() * squares.length)] 
+    return random;   
+}
+
+//Flashing Squares
+let flashingSquares = (colorChange) => {
+    let square = document.querySelector('.square')
+        square.classList.add('color-change')
+        setTimeout(() => {
+            square.classList.remove('color-change')
+        }, 250)
+    }
+
+    flashingSquares()
+
+
+
+
+
+
+
+
+
+
 
