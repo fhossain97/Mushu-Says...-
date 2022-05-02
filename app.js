@@ -1,28 +1,40 @@
 //Enter your name to play the game
 let playerName = () => {
     let player = prompt('Enter your name!', 'Name')
-
     if (player != null) {
         document.querySelector('.player-name').innerHTML = 'Player: ' + player
     }
 }
-//playerName() (Why does this pop up twice?)
+//(Why does this pop up twice?)
+
+//Count each round of the game and have a reset function within each level
+let round = 0;
+let gameRounds = () => {
+    round =+ 1
+let currentRound = document.querySelector('p')
+currentRound.innerHTML = 'Round ' + round
+
+let resetButton = document.querySelector('#reset')
+let reset = () => {
+    round -=1
+let previousRound = document.querySelector('p')
+previousRound.innerHTML = 'Round ' + round
+}
+resetButton.addEventListener('click', reset)
+}
 
 //Start button to start the game
+//playerName()
 let startGame = () => {
     let gameStartButton = document.querySelector('#start')
 startGame = () => {
 gameStartButton.style.display = 'none';
 }
 gameStartButton.addEventListener('click', startGame)
-playerName()
+gameRounds()
 }
 startGame()
 
-
-
-
-//Count each round of the game
 //Reset function within each level
 //Each round will signal the sequence to begin
 //Each sequence must be random
