@@ -6,9 +6,22 @@ let playerName = () => {
         document.querySelector('.player-name').innerHTML = 'Player: ' + player
     }
 }
-playerName()
+//playerName() (Why does this pop up twice?)
 
 //Start button to start the game
+let startGame = () => {
+    let gameStartButton = document.querySelector('#start')
+startGame = () => {
+gameStartButton.style.display = 'none';
+}
+gameStartButton.addEventListener('click', startGame)
+playerName()
+}
+startGame()
+
+
+
+
 //Count each round of the game
 //Reset function within each level
 //Each round will signal the sequence to begin
