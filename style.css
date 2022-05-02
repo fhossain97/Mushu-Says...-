@@ -25,6 +25,10 @@ body {
     
 }
 
+.player-name {
+text-align: right;
+}
+
 .scoreboard {
     text-align: right;
 }
@@ -49,40 +53,40 @@ body {
     background-color: white
 }
 
-.color-indigo {
+#indigo {
     background-color: indigo;
 
 }
 
-.color-orange {
+#orange {
     background-color: orange;
 }
 
-.color-greenyellow {
+#greenyellow {
     background-color: greenyellow;
 }
 
-.color-red {
+#red {
     background-color: red;
 }
 
-.color-yellow {
+#yellow {
     background-color: yellow;
 }
 
-.color-blue {
+#blue {
     background-color: blue;
 }
 
-.color-violet {
+#violet {
     background-color: violet;
 }
 
-.color-pink {
+#pink {
     background-color: hotpink;
 }
 
-.color-green {
+#green {
     background-color: green;
 }
 
