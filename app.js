@@ -1,3 +1,14 @@
+let indigo = document.querySelector('#indigo')
+let orange = document.querySelector('#orange')
+let yellow = document.querySelector('#yellow')
+let pink = document.querySelector('#pink')
+
+let gameVariables = {
+    currentGame: [],
+    level: 0,
+    squares: ['indigo', 'orange', 'yellow', 'pink']
+}
+
 //Enter your name to play the game
 let enterName = () => {
     let playerName = prompt('Enter your name!', 'Name')
@@ -5,56 +16,47 @@ let enterName = () => {
         document.querySelector('.player-name').innerHTML = 'Player: ' + playerName
     }
 }
-//enterName()
 
-//Start button
+//Start
 let levelHTML = document.querySelector('.level')
 let gameStartButton = document.querySelector('#start')
-let scoreHTML = document.querySelector('.scoreboard')
-let level = 0
-let score = 0
-
 let start = () => {
-scoreHTML.innerHTML = 'Score: ' + score
-levelHTML.innerHTML = 'Level: ' + level
-gameStartButton.style.display = 'none';
-beginGame()
-}
-gameStartButton.addEventListener('click', start)
+    levelHTML.innerHTML = 'Level: ' + gameVariables.level
+    gameStartButton.style.display = 'none';
+    beginGame()
+    }
+    gameStartButton.addEventListener('click', start)
 
 //Restart
 let restartButton = document.querySelector('#restart')
-let currentGame = []
 let restart = () => {
-    level = 0
-    currentGame = []
+    gameVariables.level
+    gameVariables.currentGame = []
+    enterName()
     incrementLevel()
 } 
 restartButton.addEventListener('click', restart)
 
+
+//Begin Game
 let beginGame = () => {
     restart()
 }
 
 //Each random sequence will flash a random pattern
 let coloredSquares = document.querySelectorAll('.square')
-let i = 0
 const flashSquare = () => {
     let i = 0;
     let computerPlays = setInterval(function() {
-        playGame(currentGame[i])
+        playGame(gameVariables.currentGame[i])
         i++
-        if (i >= currentGame.length) {
-            clearInterval(flashSquare)
+        if (i >= gameVariables.currentGame.length) {
+            clearInterval(computerPlays)
         }
     }, 500)
     clearPlayerMoves()
 }
 
-let indigo = document.querySelector('#indigo')
-let orange = document.querySelector('#orange')
-let yellow = document.querySelector('#yellow')
-let pink = document.querySelector('#pink')
 
 //Audio
 soundsOfSquares = {
@@ -63,7 +65,6 @@ soundsOfSquares = {
     yellow: new Audio('sounds/yellow.wav'),
     pink: new Audio('sounds/pink.wav')
 }
-
 
 let sound = (color) => {
     switch(color) {
@@ -83,54 +84,14 @@ let sound = (color) => {
 }
 
 let randomSquares = () => {   
-    const random = Math.floor(Math.random() * squares.length)
-    return random;   
+    const random = (Math.floor(Math.random() * squares.length))
+    gameVariables.currentGame.push(gameVariables.squares[random])
+    flashSquare()
 }
 
-const squaresArray = Object.values(coloredSquares)
-let playGame = (squaresArray) => {
-    let coloredSquares = document.querySelectorAll(".square");
-    let chosenSquare = squaresArray[randomSquares()]
-    chosenSquare.className = 'active'
-    sound(squaresArray)
-    setTimeout(() => {
-        chosenSquare.classList.remove('active')
-    }, 500)
-}
 
-let clearPlayerMoves = () => {
-    player = []
+let squareColors = document.querySelectorAll('.squares')
+let playGame = () => {
+  
 }
-
-let playerMoves = () => {
-    player.push(squaresArray)
-    playerTurn(squaresArray)
-}
-
-let playerTurn = () => {
-    if (player[player.length-1] !== currentGame[player.length-1]) {
-    let compare = (player.length === currentGame.length) 
-    if (compare) {
-        if (level === 10) {
-            alert('Congratulations! You have beat Mushu at his own game')
-        } else {
-            alert('Play the next level!')
-            nextLevel()
-        }
-        }
-    }
-}
-let newLevel = () => {
-    incrementLevel()
-}
-
-let incrementLevel = () => {
-    level++
-    levelHTML.className = 'active'
-
-    setTimeout(() => {
-        levelHTML.removeClass('active').html(level)
-    }, 200)
-    randomSquares()
-}
-beginGame()
+console.log(squareColors)

@@ -9,7 +9,7 @@ body {
     text-align: center;
 }
 
-.buttons {
+.button {
     text-align: center;
     margin: auto;
     padding: 10px;
@@ -26,12 +26,9 @@ body {
 }
 
 .player-name {
-text-align: left;
+text-align: center;
 }
 
-.scoreboard {
-    text-align: center;
-}
 
 .game-board {
     display: grid;
