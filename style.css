@@ -4,7 +4,7 @@ h1 {
 }
 
 body {
-    background-image: url('background.jpg');
+    background-image: url('background.png');
     background-color: black;
     text-align: center;
 }
@@ -26,17 +26,17 @@ body {
 }
 
 .player-name {
-text-align: right;
+text-align: left;
 }
 
 .scoreboard {
-    text-align: right;
+    text-align: center;
 }
 
 .game-board {
     display: grid;
-    grid-template-rows: repeat(3, 120px);
-    grid-template-columns: repeat(3, 120px);
+    grid-template-rows: repeat(2, 120px);
+    grid-template-columns: repeat(2, 120px);
     justify-content: center;
 }
 
@@ -49,44 +49,23 @@ text-align: right;
     box-shadow: inset 0px 0px 5px 5px aqua;
 }
 
-.color-change {
-    background-color: white
-}
 
 #indigo {
     background-color: indigo;
-
 }
 
 #orange {
     background-color: orange;
 }
 
-#greenyellow {
-    background-color: greenyellow;
-}
-
-#red {
-    background-color: red;
-}
-
 #yellow {
     background-color: yellow;
-}
-
-#blue {
-    background-color: blue;
-}
-
-#violet {
-    background-color: violet;
 }
 
 #pink {
     background-color: hotpink;
 }
 
-#green {
-    background-color: green;
+.active {
+    background-color: white !important;
 }
-
