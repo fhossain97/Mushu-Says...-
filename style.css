@@ -2,67 +2,64 @@ h1 {
     text-align: center;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
-
-body {
-    background-image: url('background.png');
-    background-color: black;
-    text-align: center;
-}
-
-.button {
-    text-align: center;
-    margin: auto;
-    padding: 10px;
-}
-
-#start {
+.start-button {
     text-align: center;
     width: 20vw;
     height: 5vh;
     font-size: 20px;
-    background-color: azure;
+    background-color: lightblue;
     font-style: bold;
+    }
+
+.button {
+    text-align: center;
+    padding: 10px
+}
+
+.button:active {
+    transform: translateY(4px);
+}
     
-}
-
-.player-name {
-text-align: center;
-}
-
-
-.game-board {
+.squares {
     display: grid;
     grid-template-rows: repeat(2, 120px);
     grid-template-columns: repeat(2, 120px);
     justify-content: center;
-}
+    }
 
-.square {
-    border: 1px solid black;
+.color:hover {
+    box-shadow: inset 0px 0px 5px 5px aqua;
+    border: 2px solid black;
     cursor: pointer;
 }
-
-.square:hover {
-    box-shadow: inset 0px 0px 5px 5px aqua;
-}
-
-
-#indigo {
-    background-color: indigo;
-}
-
-#orange {
-    background-color: orange;
-}
-
-#yellow {
-    background-color: yellow;
-}
+    
+#green {
+    background-color: green;
+    margin: 5px;  
+    }
 
 #pink {
-    background-color: hotpink;
+    background-color: pink;
+    margin: 5px;  
+    }
+
+#indigo {
+      background-color: indigo;
+      margin: 5px;
+    }
+
+#yellow {
+      background-color: yellow;
+      margin: 5px;
+    }
+
+.level {
+    text-align: center;
+    padding: 2px
 }
 
 .active {
-    background-color: white !important;
+    box-shadow: 5px 5px red;
+    transform: translateY(3px);
+    background-color: white !important
 }

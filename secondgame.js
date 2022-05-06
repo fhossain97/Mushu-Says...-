@@ -31,80 +31,80 @@
 // restartButton.addEventListener('click', restart)
 
 //Begin Game
-let beginGame = () => {
-    restart()
-}
+// let beginGame = () => {
+//     restart()
+// }
 
-//Each random sequence will flash a random pattern
-let coloredSquares = document.querySelectorAll('.square')
-const flashSquare = () => {
-    let i = 0;
-    let computerPlays = setInterval(function() {
-        playGame(currentGame[i])
-        //i++
-        if (i >= currentGame.length) {
-            clearInterval(computerPlays)
-        }
-    }, 500)
-    clearPlayerMoves()
-}
+// //Each random sequence will flash a random pattern
+// let coloredSquares = document.querySelectorAll('.square')
+// const flashSquare = () => {
+//     let i = 0;
+//     let computerPlays = setInterval(function() {
+//         playGame(currentGame[i])
+//         //i++
+//         if (i >= currentGame.length) {
+//             clearInterval(computerPlays)
+//         }
+//     }, 500)
+//     clearPlayerMoves()
+// }
 
-let indigo = document.querySelector('#indigo')
-let orange = document.querySelector('#orange')
-let yellow = document.querySelector('#yellow')
-let pink = document.querySelector('#pink')
+// let indigo = document.querySelector('#indigo')
+// let orange = document.querySelector('#orange')
+// let yellow = document.querySelector('#yellow')
+// let pink = document.querySelector('#pink')
 
-//Audio
-soundsOfSquares = {
-    indigo: new Audio('sounds/indigo.wav'),
-    orange: new Audio('sounds/orange.wav'),
-    yellow: new Audio('sounds/yellow.wav'),
-    pink: new Audio('sounds/pink.wav')
-}
+// //Audio
+// soundsOfSquares = {
+//     indigo: new Audio('sounds/indigo.wav'),
+//     orange: new Audio('sounds/orange.wav'),
+//     yellow: new Audio('sounds/yellow.wav'),
+//     pink: new Audio('sounds/pink.wav')
+// }
 
 
-let sound = (color) => {
-    switch(color) {
-        case indigo:
-        soundsOfSquares.indigo.play();
-        break;
-        case orange:
-        soundsOfSquares.orange.play();
-        break;
-        case yellow:
-        soundsOfSquares.yellow.play();
-        break;
-        case pink:
-        soundsOfSquares.pink.play();
-        break;
-    }
-}
+// let sound = (color) => {
+//     switch(color) {
+//         case indigo:
+//         soundsOfSquares.indigo.play();
+//         break;
+//         case orange:
+//         soundsOfSquares.orange.play();
+//         break;
+//         case yellow:
+//         soundsOfSquares.yellow.play();
+//         break;
+//         case pink:
+//         soundsOfSquares.pink.play();
+//         break;
+//     }
+// }
 
 //Random squares chosen
-const squares = ['indigo', 'orange', 'yellow', 'pink'];
-let randomSquares = () => {   
-    const random = squares[Math.floor(Math.random() * squares.length)]
-    currentGame.push(random)
-    flashSquare()
-}
+// const squares = ['indigo', 'orange', 'yellow', 'pink'];
+// let randomSquares = () => {   
+//     const random = squares[Math.floor(Math.random() * squares.length)]
+//     currentGame.push(random)
+//     flashSquare()
+// }
 
 
-const squaresArray = Object.values(coloredSquares)
+// const squaresArray = Object.values(coloredSquares)
 
-let numFlash = 0
-const playGame = (squaresArray, numFlash) => {
-    let chosenSquare = squaresArray[randomSquares()]
-    chosenSquare.className = 'active'
-  setTimeout(() => {
-      chosenSquare.classList.remove('active')
-     if (numFlash < 5) {
-         numFlash += 1
-     playGame(squaresArray, numFlash);
-      }
-     }, 250);
-}
+// let numFlash = 0
+// const playGame = (squaresArray, numFlash) => {
+//     let chosenSquare = squaresArray[randomSquares()]
+//     chosenSquare.className = 'active'
+//   setTimeout(() => {
+//       chosenSquare.classList.remove('active')
+//      if (numFlash < 5) {
+//          numFlash += 1
+//      playGame(squaresArray, numFlash);
+//       }
+//      }, 250);
+// }
 
-playGame(squaresArray, numFlash);
+// playGame(squaresArray, numFlash);
 
 //Player moves
 let clearPlayerMoves = () => {

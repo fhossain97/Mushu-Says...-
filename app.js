@@ -1,97 +1,51 @@
 let indigo = document.querySelector('#indigo')
-let orange = document.querySelector('#orange')
+let green = document.querySelector('#green')
 let yellow = document.querySelector('#yellow')
 let pink = document.querySelector('#pink')
-
-let gameVariables = {
-    currentGame: [],
-    level: 0,
-    squares: ['indigo', 'orange', 'yellow', 'pink']
-}
-
-//Enter your name to play the game
-let enterName = () => {
-    let playerName = prompt('Enter your name!', 'Name')
-    if (playerName != null) {
-        document.querySelector('.player-name').innerHTML = 'Player: ' + playerName
-    }
-}
+let colors = [green, yellow, pink, indigo]
+let gamePlay = []
 
 //Start
-let levelHTML = document.querySelector('.level')
-let gameStartButton = document.querySelector('#start')
-let start = () => {
-    levelHTML.innerHTML = 'Level: ' + gameVariables.level
-    gameStartButton.style.display = 'none';
-    beginGame()
+
+//Start
+let startButton = document.querySelector('.start-button')
+let levels = document.querySelector('.level')
+let level = 0
+let start = true
+
+let startGame = () => {
+    levels.innerHTML = 'Level: ' + level
+    startButton.style.display = 'none';
+    start = false
+    randomSeq()
+    
     }
-    gameStartButton.addEventListener('click', start)
+startButton.addEventListener('click', startGame)
 
-//Restart
-let restartButton = document.querySelector('#restart')
-let restart = () => {
-    gameVariables.level
-    gameVariables.currentGame = []
-    enterName()
-    incrementLevel()
-} 
-restartButton.addEventListener('click', restart)
+const random = Math.floor(Math.random() * colors.length)
 
-
-//Begin Game
-let beginGame = () => {
-    restart()
+let randomSeq = () => {
+    document.getElementByID(colors[random]).classList.add('active')
+    let beep = new Audio('sounds/red.wav')
+    beep.play()
+    gamePlay.push(colors[random])
+    setTimeout(() => {
+        document.getElementByID(colors[random]).classList.remove('active')
+    }, 200)
 }
 
-//Each random sequence will flash a random pattern
-let coloredSquares = document.querySelectorAll('.square')
-const flashSquare = () => {
-    let i = 0;
-    let computerPlays = setInterval(function() {
-        playGame(gameVariables.currentGame[i])
-        i++
-        if (i >= gameVariables.currentGame.length) {
-            clearInterval(computerPlays)
+let i = 0 
+let gameLoop = () => {
+    if (document.activeElement.id === gamePlay[i]) {
+        if (i === (gamePlay.length - 1)) {
+            alert('Correct color chosen!')
+            randomSeq()
+            i = 0
+        } else {
+            i++
         }
-    }, 500)
-    clearPlayerMoves()
-}
-
-
-//Audio
-soundsOfSquares = {
-    indigo: new Audio('sounds/indigo.wav'),
-    orange: new Audio('sounds/orange.wav'),
-    yellow: new Audio('sounds/yellow.wav'),
-    pink: new Audio('sounds/pink.wav')
-}
-
-let sound = (color) => {
-    switch(color) {
-        case indigo:
-        soundsOfSquares.indigo.play();
-        break;
-        case orange:
-        soundsOfSquares.orange.play();
-        break;
-        case yellow:
-        soundsOfSquares.yellow.play();
-        break;
-        case pink:
-        soundsOfSquares.pink.play();
-        break;
+    } else {
+        alert('Wrong color selected')
+        location.reload()
     }
 }
-
-let randomSquares = () => {   
-    const random = (Math.floor(Math.random() * squares.length))
-    gameVariables.currentGame.push(gameVariables.squares[random])
-    flashSquare()
-}
-
-
-let squareColors = document.querySelectorAll('.squares')
-let playGame = () => {
-  
-}
-console.log(squareColors)
