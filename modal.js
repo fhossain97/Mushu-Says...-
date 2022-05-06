@@ -1,26 +1,3 @@
-// Modal code
-// The modal
-// let startModal = document.querySelector('#nameModal')
-// //Modal Button
-// let startModalButton = document.querySelector('#name')
-// //Element that closes modal
-// let span = document.querySelector('.close')
-// //Open the modal
-// startModalButton.addEventListener('click', () => {
-// startModal.style.display = 'block'
-// })
-// //Close the modal
-// span.addEventListener('click', () => {
-//     startModal.style.display = 'none'
-// })
-
-// //Closes modal if clicked elsewhere
-// window.addEventListener('click', (e) => {
-// e.preventDefault()
-// if (e.target === startModal) {
-//     startModal.style.display = 'none'
-// }
-// })
 
 
 
@@ -288,3 +265,145 @@
 
 // </body>
 // </html>
+// let indigo = document.querySelector('#indigo')
+// let green = document.querySelector('#green')
+// let yellow = document.querySelector('#yellow')
+// let pink = document.querySelector('#pink')
+// let colors = [green, yellow, pink, indigo]
+// let gamePlay = []
+// let level = 0
+
+// //Start
+// let startButton = document.querySelector('.start-button')
+// let levels = document.querySelector('.level')
+// let start = true
+
+// let startGame = () => {
+//     levels.innerHTML = 'Level: ' + level
+//     startButton.style.display = 'none';
+//     start = false
+//     randomSeq()
+    
+//     }
+// startButton.addEventListener('click', startGame)
+
+// const random = Math.floor(Math.random() * colors.length)
+
+// let randomSeq = () => {
+//     document.getElementByID(colors[random]).classList.add('active')
+//     let beep = new Audio('sounds/red.wav')
+//     beep.play()
+//     gamePlay.push(colors[random])
+//     setTimeout(() => {
+//         document.getElementByID(colors[random]).classList.remove('active')
+//     }, 200)
+// }
+
+// let i = 0 
+// let gameLoop = () => {
+//     if (document.activeElement.id === gamePlay[i]) {
+//         if (i === (gamePlay.length - 1)) {
+//             alert('Correct color chosen!')
+//             randomSeq()
+//             i = 0
+//         } else {
+//             i++
+//         }
+//     } else {
+//         alert('Wrong color selected')
+//         location.reload()
+//     }
+// }
+
+// <!DOCTYPE html>
+// <html lang="en">
+// <head>
+//     <meta charset="UTF-8">
+//     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+//     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+//     <script src="app.js" defer></script>
+//     <link rel="stylesheet" href="style.css">
+//     <link rel="icon" sizes="228x228" href="favicon.jpg">
+//     <title>Mushu Says...</title>
+// </head>
+// <body>
+//     <h1>Mushu Says...</h1>
+
+// <div class="button">
+//     <button class="start-button">Start</button>
+// </div>
+
+//     <div class="player">Player</div>
+//     <div class ="level">Level</div> 
+
+// <div class="squares">
+//   <button class="color" id="green">1</button>
+//   <button class="color" id="pink">2</button>
+//   <button class="color" id="indigo">3</button>
+//   <button class="color" id="yellow">4</button>
+// </div>
+      
+// </body>
+// </html>
+
+// h1 {
+//     text-align: center;
+//     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+// }
+// .start-button {
+//     text-align: center;
+//     width: 20vw;
+//     height: 5vh;
+//     font-size: 20px;
+//     background-color: lightblue;
+//     font-style: bold;
+//     }
+
+// .button {
+//     text-align: center;
+//     padding: 10px
+// }
+  
+// .squares {
+//     display: grid;
+//     grid-template-rows: repeat(2, 120px);
+//     grid-template-columns: repeat(2, 120px);
+//     justify-content: center;
+//     }
+
+// .color:hover {
+//     box-shadow: inset 0px 0px 5px 5px aqua;
+//     border: 2px solid black;
+//     cursor: pointer;
+// }
+    
+// #green {
+//     background-color: green;
+//     margin: 5px;  
+//     }
+
+// #pink {
+//     background-color: pink;
+//     margin: 5px;  
+//     }
+
+// #indigo {
+//       background-color: indigo;
+//       margin: 5px;
+//     }
+
+// #yellow {
+//       background-color: yellow;
+//       margin: 5px;
+//     }
+
+// .level {
+//     text-align: center;
+//     padding: 2px
+// }
+
+// .active {
+//     box-shadow: 5px 5px red;
+//     transform: translateY(3px);
+//     background-color: white !important
+// }
