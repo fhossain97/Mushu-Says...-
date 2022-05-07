@@ -5,19 +5,24 @@ Description: A modern spin on an old classic, Mushu Says... is the updated versi
 Players will select the correct square in the correct order of the pattern flashed. The goal is to reach level 10! Let's see how well you fare in this game. 
 
 Enter your name to play:
+
 <img src="Images/name.png" alt="enter your name" width="400" height="175">
 
 Game:
-<img src="Images/main.png" alt="main page">
+
+<img src="Images/main.png" alt="main page" width="400" height="175">
 
 Correct choice:
-<img src="Images/correct.png" alt="correct">
+
+<img src="Images/correct.png" alt="correct" width="400" height="175">
 
 Incorrect choice:
-<img src="Images/incorrect.png" alt="incorrect">
+
+<img src="Images/incorrect.png" alt="incorrect" width="400" height="175">
 
 Winner:
-<img src="Images/winner.png" alt="winner">
+
+<img src="Images/winner.png" alt="winner" width="400" height="175">
 
 Languages used to create game: HTML, CSS, and Javascript
 
