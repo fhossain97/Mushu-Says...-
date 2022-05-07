@@ -26,7 +26,7 @@ Winner:
 
 Languages used to create game: HTML, CSS, and Javascript
 
-Game link: 
+Game link: https://fhossain97.github.io/Mushu-Says...-
 
 Future Steps:
 1. Add modal animations after each level
