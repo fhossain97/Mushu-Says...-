@@ -1,4 +1,4 @@
-
+//Game variables
 let gameSeq = []
 let level = 1
 let colorArray = ["indigo", "green", "yellow", "pink"]
@@ -12,19 +12,20 @@ let enterName = () => {
         document.querySelector('.player').innerHTML = 'Player: ' + playerName
     }
 }
+enterName()
 
 //Start
 let levels = document.querySelector('.level')
-let gameStartButton = document.querySelector('.start-button')
+let startButton = document.querySelector('.start-button')
 let start = () => {
     level = 1
     gameSeq = []
     playerSeq = []
     levels.innerHTML = 'Level: ' + level
-    gameStartButton.style.display = 'none';
+    startButton.style.display = 'none';
     beginGame(level)
     }
-    gameStartButton.addEventListener('click', start)
+    startButton.addEventListener('click', start)
 
 //Restart
 let restartButton = document.querySelector('.restart')
@@ -38,7 +39,7 @@ let flash = () => {
     randomSquare.style.backgroundColor = 'white'
     setTimeout(() => {
         randomSquare.style.backgroundColor = randomColor   
-    }, 1000)
+    }, 2500)
     return randomColor
 }
 
@@ -48,159 +49,80 @@ let flash = () => {
 let beginGame = (level) => {
     levels.innerHTML = 'Level: ' + level
     
-    // flash the same number of times as level value
-    // for (i = 1; i <= level; i++) {
-    //         gameSeq.push(flash())
-    // }
-    gameSeq.push(flash())
-    alert('Click the correct pattern')
-
+    for (let i = 1; i <= level; i++) {
+        setTimeout(() => {
+            gameSeq.push(flash())
+          }, 1000*i)
+          console.log(i)
+    }
+   
     let indigo = document.querySelector('#indigo')
     let green = document.querySelector('#green')
     let yellow = document.querySelector('#yellow')
     let pink = document.querySelector('#pink')
-
-    pink.addEventListener('click', ()=> {
-        playerSeq.push()
+    
+    pink.addEventListener('click', (e)=> {
+        e.stopImmediatePropagation();
+        playerSeq.push(e.target.id)
+        let color1 = new Audio('sounds/pink.wav')
+        color1.play()
     })
 
-    indigo.addEventListener('click', ()=> {
-        playerSeq.push()
+    indigo.addEventListener('click', (e)=> {
+        e.stopImmediatePropagation();
+        playerSeq.push(e.target.id)
+        let color2 = new Audio('sounds/indigo.wav')
+        color2.play()
     })
 
-    green.addEventListener('click', ()=> {
-        playerSeq.push()
+    green.addEventListener('click', (e)=> {
+        e.stopImmediatePropagation();
+        playerSeq.push(e.target.id)
+        let color3 = new Audio('sounds/green.wav')
+        color3.play()
     })
-    yellow.addEventListener('click', ()=> {
-        playerSeq.push()
+    yellow.addEventListener('click', (e)=> {
+        e.stopImmediatePropagation();
+        playerSeq.push(e.target.id)
+        let color4 = new Audio('sounds/yellow.wav')
+        color4.play()
     })
-
 
     let checkAnswerButton = document.querySelector('.check')
     
-    console.log(playerSeq)
-    //checkAnswerButton.addEventListener('click', ()=> {
-    // checkAnswer(playerSeq, gameSeq)
-    // })
-
-    //level++
-
+    checkAnswerButton.addEventListener('click', (e)=> {
+    e.stopImmediatePropagation();
+    checkAnswer(playerSeq, gameSeq)
+    })
 }
 
-
+//Compares game and player choices
 let checkAnswer = (playerSeq, gameSeq) => {
-    if (playerSeq === gameSeq) {
-        alert('Correct!')            
+    console.log(playerSeq)
+    console.log(gameSeq)
+    if (JSON.stringify(playerSeq) === JSON.stringify(gameSeq)) {
+        //setTimeout(() => {
+            //clearPlayerSeq()
+        //}, 500)
+        alert('Correct!')   
+        level++ 
+        clearGameSeq()
+        clearPlayerSeq() 
+        beginGame(level)  
         } else {
-            alert('Wrong! Restart game.')
+            alert('Wrong! Restart the game')
         }
 }
 
 
+//Clear player moves
+let clearPlayerSeq = () => {
+    playerSeq = []
+}
+
+//Clear game moves
+let clearGameSeq = () => {
+    gameSeq = []
+}
 
 
-
-
-// Player moves
-// let clearPlayerMoves = () => {
-//     player = []
-
-
-
-
-
-// Iterate through level until it = 1
-// Add to gameSeq flash() results 
-
-
-
-
-
-
-// //Audio
-// soundsOfSquares = {
-//     indigo: new Audio('sounds/indigo.wav'),
-//     green: new Audio('sounds/green.wav'),
-//     yellow: new Audio('sounds/yellow.wav'),
-//     pink: new Audio('sounds/pink.wav')
-// }
-
-// let sound = (color) => {
-//     switch(color) {
-//         case indigo:
-//         soundsOfSquares.indigo.play();
-//         break;
-//         case orange:
-//         soundsOfSquares.orange.play();
-//         break;
-//         case yellow:
-//         soundsOfSquares.yellow.play();
-//         break;
-//         case pink:
-//         soundsOfSquares.pink.play();
-//         break;
-//     }
-// }
-
-// const squaresArray = Object.values(squares)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// let newLevel = () => {
-//     incrementLevel()
-// }
-
-// let incrementLevel = () => {
-//     level++
-//     levels.classList.add('active')
-
-//     setTimeout(() => {
-//         levels.classList.remove('active')
-//     }, 300)
-//     randomSquares()
-// }
-
-
-// Modal code
-// The modal
-// let startModal = document.querySelector('#nameModal')
-// //Modal Button
-// let startModalButton = document.querySelector('#name')
-// //Element that closes modal
-// let span = document.querySelector('.close')
-// //Open the modal
-// startModalButton.addEventListener('click', () => {
-// startModal.style.display = 'block'
-// })
-// //Close the modal
-// span.addEventListener('click', () => {
-//     startModal.style.display = 'none'
-// })
-
-// //Closes modal if clicked elsewhere
-// window.addEventListener('click', (e) => {
-// e.preventDefault()
-// if (e.target === startModal) {
-//     startModal.style.display = 'none'
-// }
-// })
