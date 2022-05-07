@@ -10,7 +10,7 @@ Enter your name to play:
 
 Game:
 
-<img src="Images/main.png" alt="main page" width="400" height="175">
+<img src="Images/main.png" alt="main page" width="400" height="400">
 
 Correct choice:
 
